@@ -1,0 +1,19 @@
+Column name,Variable definition,Units,Storage type
+species,Species name,,text string
+isolate,Isolate ID,,text string
+taxon,Taxon name,,text string
+system,Freshwater/marine,,text string
+temperature,Culture temperature,°C,floating point
+irradiance,Culture irradiance,µmol photons m^-2^ s^-1^,floating point
+light_hours,Culture daylength,hr,integer
+synonym,Former species name,,text string
+volume,Cell volume,µm^3^,floating point
+c_per_cell,Carbon per cell,µmol cell^-1^,floating point
+c_citation,C per cell citation,integer,integer
+mu_inf_amm,µ = for ammonium-limited growth,day^-1^,floating point
+mu_amm,µ~max~ for ammonium-limited growth,day^-1^,floating point
+k_amm_m,K~m~ for ammonium-limited growth,µmol L^-1^,floating point
+k_amm,K for ammonium uptake,µmol L^-1^,floating point
+vmax_amm,V~max~ for ammonium uptake,µmol N cell^-1 day^-1^,floating point
+vmax_amm_c,V~max~ :C for ammonium uptake,µmol N µmol C^-1^ day^-1^,floating point
+qmin_amm,Q~min~ for ammonium-limited growth,µmol N cell^-1^,floating point

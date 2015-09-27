@@ -1,0 +1,5 @@
+Column name,Variable definition,Units,Storage type
+species,Species name,text,string
+isolate,Isolate ID,text,string
+volume,Cell volume,µm 3,floating point
+volume_citation,Citation for volume measurement,text,string

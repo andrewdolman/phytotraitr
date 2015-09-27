@@ -1,0 +1,35 @@
+---
+title: "phytotraitr"
+author: "Andrew M. Dolman"
+date: '`r format(Sys.time(), "%d %B, %Y")`'
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+## Usage
+
+```{r, echo=FALSE, message=FALSE}
+library(knitr)
+library(phytotraitr)
+library(dplyr)
+library(ggplot2)
+```
+
+```{r}
+kable(Edwards_nutrient_traits[1:10,])
+
+kable(Edwards_nutrient_traits_meta)
+```
+
+```{r}
+p <- Edwards_nutrient_traits %>% 
+  ggplot(aes(x = taxon, y = `vmax_p`, fill = system, colour=system)) +
+  geom_point(position = position_jitterdodge(jitter.width = 0.2)) + 
+  coord_flip() +
+#  facet_wrap(~system, scales = "fixed") + 
+  scale_y_continuous(trans = "log10")
+p
+
+```
+
