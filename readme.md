@@ -68,5 +68,5 @@ p
 ## Warning: Removed 240 rows containing missing values (geom_point).
 ```
 
-![](readme_files/figure-html/unnamed-chunk-3-1.png) 
+![](readme_files/figure-html/unnamed-chunk-2-1.png) 
 

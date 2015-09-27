@@ -16,7 +16,7 @@ library(dplyr)
 library(ggplot2)
 ```
 
-```{r}
+```{r tables, results='markup'}
 kable(Edwards_nutrient_traits[1:10,])
 
 kable(Edwards_nutrient_traits_meta)
