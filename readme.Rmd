@@ -18,7 +18,7 @@ library(ggplot2)
 
 ```{r tables, results='markup'}
 #kable(Edwards_nutrient_traits[1:10,])
-
+Encoding(Edwards_nutrient_traits_meta$Units) <- "unknown"
 kable(Edwards_nutrient_traits_meta, format = "markdown")
 ```
 
