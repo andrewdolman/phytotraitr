@@ -13,23 +13,36 @@ output:
 library(knitr)
 library(phytotraitr)
 library(dplyr)
+library(tidyr)
 library(ggplot2)
 ```
 
 ```{r tables, results='markup'}
 #kable(Edwards_nutrient_traits[1:10,])
-Encoding(Edwards_nutrient_traits_meta$Units) <- "unknown"
 kable(Edwards_nutrient_traits_meta, format = "markdown")
 ```
 
-```{r}
+```{r, message=FALSE}
 p <- Edwards_nutrient_traits %>% 
   ggplot(aes(x = taxon, y = `vmax_p`, fill = system, colour=system)) +
   geom_point(position = position_jitterdodge(jitter.width = 0.2)) + 
   coord_flip() +
-#  facet_wrap(~system, scales = "fixed") + 
   scale_y_continuous(trans = "log10")
 p
-
 ```
 
+```{r, message=FALSE, fig.height=12}
+Edwards_nutrient_traits_long <- Edwards_nutrient_traits %>%
+  select(-species, -isolate, -citation, -c_citation) %>% 
+  gather(Group, Value, -taxon, - system, -temperature, -irradiance, -light_hours, -synonym) %>% 
+  filter(complete.cases(Value)) %>% 
+  mutate(Value = as.numeric(Value))
+
+p <- Edwards_nutrient_traits_long %>% 
+  ggplot(aes(x = Value)) +
+  geom_histogram() + 
+  facet_wrap(~Group, scales = "free_y", ncol = 4) +
+  theme(aspect.ratio = 1) + 
+  scale_x_continuous(trans = "log10")
+p
+```
