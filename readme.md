@@ -14,7 +14,7 @@ kable(Edwards_nutrient_traits_meta, format = "markdown")
 
 
 
-|Column name |Variable definition                   |Units                      |Storage type   |
+|﻿Column name  |Variable definition                   |Units                      |Storage type   |
 |:-----------|:-------------------------------------|:--------------------------|:--------------|
 |species     |Species name                          |text                       |string         |
 |isolate     |Isolate ID                            |text                       |string         |
