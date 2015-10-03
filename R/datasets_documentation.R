@@ -4,9 +4,15 @@
 #' Nutrient utilization traits of phytoplankton. Ecology 96:2311. 
 #' http://dx.doi.org/10.1890/14-2252.1.
 #' 
+#' 
+#' @section Corrections:
+#' 
+#' The value for "system" was corrected from "fresh" to "freshwater" for one entry
+#'   
+#' @usage data(Edwards_nutrient_traits)
+#' 
+#' @format A data frame with 384 rows and 42 variables:
 #' \encoding{UTF-8}
-#' 
-#' 
 #' \tabular{llll}{
 #' \bold{Column name} \tab \bold{Variable definition} \tab \bold{Units} \tab \bold{Storage type} \cr
 #' species     \tab Species name                          \tab text                       \tab string        \cr
@@ -53,7 +59,30 @@
 #' citation    \tab Publication code                      \tab integer                    \tab integer       
 #'}
 #'
-#' @format A data frame with 384 rows and 42 variables:
 #' 
 #' @source \url{http://www.esapubs.org/archive/ecol/E096/202/}
 "Edwards_nutrient_traits"
+
+
+
+#' Cell volumes.
+#'
+#' Data from Kyle F. Edwards, Christopher A. Klausmeier, and Elena Litchman (2015). 
+#' Nutrient utilization traits of phytoplankton. Ecology 96:2311. 
+#' http://dx.doi.org/10.1890/14-2252.1.
+#' 
+#' 
+#' @usage data(Edwards_cell_volumes)
+#' 
+#' @format A data frame with 134 rows and 4 variables:
+#' \encoding{UTF-8}
+#' \tabular{llll}{
+#' \bold{Column name} \tab \bold{Variable definition} \tab \bold{Units} \tab \bold{Storage type} \cr
+#' species         \tab Species name                    \tab text  \tab string        \cr
+#' isolate         \tab Isolate ID                      \tab text  \tab string        \cr
+#' volume          \tab Cell volume                     \tab µm^3^ \tab floating point\cr
+#' volume_citation \tab Citation for volume measurement \tab text  \tab string        
+#'}
+#' @source \url{http://www.esapubs.org/archive/ecol/E096/202/}
+"Edwards_cell_volumes"
+

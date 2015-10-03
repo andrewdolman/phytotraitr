@@ -17,11 +17,7 @@ Edwards_nutrient_traits <- Edwards_nutrient_traits %>%
 
 use_data(Edwards_nutrient_traits, overwrite = TRUE)
 
-
 Edwards_nutrient_traits_meta <- read_csv("data-raw/Edwards_Klausmeier_Litchman_2015/Table1_key.csv")
-
-# Encoding(Edwards_nutrient_traits_meta$`Variable definition`) <- "unknown"
-# Encoding(Edwards_nutrient_traits_meta$Units) <- "unknown"
 
 use_data(Edwards_nutrient_traits_meta, overwrite = TRUE)
 
@@ -32,3 +28,5 @@ use_data(Edwards_citations, overwrite = TRUE)
 Edwards_cell_volumes <- read_csv("data-raw/Edwards_Klausmeier_Litchman_2015/Table3.csv")
 use_data(Edwards_cell_volumes, overwrite = TRUE)
 
+Edwards_cell_volumes_meta <- read_csv("data-raw/Edwards_Klausmeier_Litchman_2015/Table3_key.csv")
+use_data(Edwards_cell_volumes_meta, overwrite = TRUE)
