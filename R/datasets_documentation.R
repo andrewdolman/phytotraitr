@@ -1,3 +1,6 @@
+## Edwards
+
+
 #' Nutrient utilization traits of phytoplankton.
 #'
 #' Data from Kyle F. Edwards, Christopher A. Klausmeier, and Elena Litchman (2015). 
@@ -85,3 +88,61 @@
 #'}
 #' @source \url{http://www.esapubs.org/archive/ecol/E096/202/}
 "Edwards_cell_volumes"
+
+
+## Chen
+
+#' Chen (2015) Thermal Traits.
+#'
+#' Data from Chen B. (2015) Patterns of thermal limits of phytoplankton. 
+#' Journal of Plankton Research 37, 285–292.
+#' 
+#' @usage data(Chen_thermal_traits)
+#' 
+#' @format A data frame with 339 rows and 21 variables:
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Description} \tab \bold{Units} \cr
+#' References      \tab References                               \tab NA   \cr
+#' ID              \tab ID                                       \tab NA   \cr
+#' Phylum          \tab Phylum                                   \tab NA   \cr
+#' Class           \tab Class                                    \tab NA   \cr
+#' Order           \tab Order                                    \tab NA   \cr
+#' Family          \tab Family                                   \tab NA   \cr
+#' Genus           \tab Genus                                    \tab NA   \cr
+#' Species         \tab Species                                  \tab NA   \cr
+#' Habitat         \tab Habitat                                  \tab NA   \cr
+#' T_g_min         \tab Lowest growth temperature °C             \tab °C   \cr
+#' T_g_max         \tab Highest growth temperature °C            \tab °C   \cr
+#' T_g_opt         \tab Optimal growth temperature °C            \tab °C   \cr
+#' mu_max          \tab Maximal growth rate d^-1 ^               \tab d^-1 \cr
+#' Longitude       \tab Longitude °E                             \tab °E   \cr
+#' Latitude        \tab Latitude °N                              \tab °N   \cr
+#' Cell_volume     \tab Cell Volume µm^3^                        \tab µm^3^\cr
+#' Thermal_breadth \tab Thermal breadth °C                       \tab °C   \cr
+#' T_env_mean      \tab Environmental annual mean temperature °C \tab °C   \cr
+#' T_env_min       \tab Environmental lowest temperature °C      \tab °C   \cr
+#' T_env_max       \tab Environmental highest temperature °C     \tab °C   \cr
+#' T_env_range     \tab Environmental temperature range °C       \tab °C   
+#'}
+#' @source \url{http://plankt.oxfordjournals.org/content/37/2/285/suppl/DC1}
+"Chen_thermal_traits"
+
+#' Chen (2015) Thermal Traits references.
+#'
+#' References for data from Chen B. (2015) Patterns of thermal limits of phytoplankton. 
+#' Journal of Plankton Research 37, 285–292.
+#' 
+#' @usage data(Chen_thermal_traits_references)
+#' @source \url{http://plankt.oxfordjournals.org/content/37/2/285/suppl/DC1}
+"Chen_thermal_traits_references"
+
+
+#' Chen (2015) Thermal Traits metadata
+#'
+#' Metadata for data from Chen B. (2015) Patterns of thermal limits of phytoplankton. 
+#' Journal of Plankton Research 37, 285–292.
+#' 
+#' @usage data(Chen_thermal_traits_meta)
+#' @source \url{http://plankt.oxfordjournals.org/content/37/2/285/suppl/DC1}
+"Chen_thermal_traits_meta"

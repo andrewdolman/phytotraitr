@@ -1,7 +1,9 @@
 #'  
 #' @title create_rd_table
 #' @param df a dataframe
-#' @description Creates an .Rd compatible dataframe
+#' @description Creates an .Rd compatible dataframe. Adapted from the suggested
+#'  function in the roxygen2 vignette 
+#'  https://cran.r-project.org/web/packages/roxygen2/vignettes/formatting.html
 #' @usage cat(tabular(df))
 #' @return an rd compatible dataframe
 #' @export tabular

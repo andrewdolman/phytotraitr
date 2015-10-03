@@ -2,6 +2,13 @@
 Andrew M. Dolman  
 `r format(Sys.time(), "%d %B, %Y")`  
 
+A compilation of published phytoplankton trait data compilations. 
+
+Contains:
+
+* Nutrient uptake traits from Edwards et al (2015)
+* Thermal traits from Chen (2015)
+
 ## Usage
 
 
@@ -59,6 +66,36 @@ kable(Edwards_nutrient_traits_meta, format = "markdown")
 |qmax_p_c    |Q~max~:C for phosphate-limited growth |µmol P µmol C^-1^          |floating point |
 |citation    |Publication code                      |integer                    |integer        |
 
+```r
+kable(Chen_thermal_traits_meta, format = "markdown")
+```
+
+
+
+|Variable        |Description                              |Units |
+|:---------------|:----------------------------------------|:-----|
+|References      |References                               |NA    |
+|ID              |ID                                       |NA    |
+|Phylum          |Phylum                                   |NA    |
+|Class           |Class                                    |NA    |
+|Order           |Order                                    |NA    |
+|Family          |Family                                   |NA    |
+|Genus           |Genus                                    |NA    |
+|Species         |Species                                  |NA    |
+|Habitat         |Habitat                                  |NA    |
+|T_g_min         |Lowest growth temperature °C             |°C    |
+|T_g_max         |Highest growth temperature °C            |°C    |
+|T_g_opt         |Optimal growth temperature °C            |°C    |
+|mu_max          |Maximal growth rate d^-1 ^               |d^-1  |
+|Longitude       |Longitude °E                             |°E    |
+|Latitude        |Latitude °N                              |°N    |
+|Cell_volume     |Cell Volume µm^3^                        |µm^3^ |
+|Thermal_breadth |Thermal breadth °C                       |°C    |
+|T_env_mean      |Environmental annual mean temperature °C |°C    |
+|T_env_min       |Environmental lowest temperature °C      |°C    |
+|T_env_max       |Environmental highest temperature °C     |°C    |
+|T_env_range     |Environmental temperature range °C       |°C    |
+
 
 ```r
 p <- Edwards_nutrient_traits %>% 
@@ -93,3 +130,18 @@ p
 ```
 
 ![](readme_files/figure-html/unnamed-chunk-3-1.png) 
+
+
+```r
+p <- Chen_thermal_traits %>% 
+  ggplot(aes(x = T_g_min, y=T_g_max)) %>% 
+  +  geom_point(position = position_jitter(width = 0.2, height = 0.2))
+p
+```
+
+```
+## Warning: Removed 228 rows containing missing values (geom_point).
+```
+
+![](readme_files/figure-html/chen1-1.png) 
+

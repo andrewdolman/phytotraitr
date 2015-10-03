@@ -2,10 +2,18 @@
 title: "phytotraitr"
 author: "Andrew M. Dolman"
 date: '`r format(Sys.time(), "%d %B, %Y")`'
-output: 
-  html_document: 
+output:
+  html_document:
     keep_md: yes
+  pdf_document: default
 ---
+
+A compilation of published phytoplankton trait data compilations. 
+
+Contains:
+
+* Nutrient uptake traits from Edwards et al (2015)
+* Thermal traits from Chen (2015)
 
 ## Usage
 
@@ -20,6 +28,7 @@ library(ggplot2)
 ```{r tables, results='markup'}
 #kable(Edwards_nutrient_traits[1:10,])
 kable(Edwards_nutrient_traits_meta, format = "markdown")
+kable(Chen_thermal_traits_meta, format = "markdown")
 ```
 
 ```{r, message=FALSE}
@@ -46,3 +55,11 @@ p <- Edwards_nutrient_traits_long %>%
   scale_x_continuous(trans = "log10")
 p
 ```
+
+```{r chen1}
+p <- Chen_thermal_traits %>% 
+  ggplot(aes(x = T_g_min, y=T_g_max)) %>% 
+  +  geom_point(position = position_jitter(width = 0.2, height = 0.2))
+p
+```
+
