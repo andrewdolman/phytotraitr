@@ -24,3 +24,4 @@ tabular <- function(df, ...) {
   paste("#' \\tabular{", paste(col_align, collapse = ""), "}{\n","#' ", header, "\n",
         contents, "\n #'}\n", sep = "")
 }
+
