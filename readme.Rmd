@@ -1,65 +1,65 @@
 ---
 title: "phytotraitr"
 author: "Andrew M. Dolman"
-date: '`r format(Sys.time(), "%d %B, %Y")`'
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
     keep_md: yes
   pdf_document: default
 ---
+*********************
+This package contains a compilation of compilations of published phytoplankton trait data. 
 
-A compilation of published phytoplankton trait data compilations. 
-
-Contains:
+## Contents:
 
 * Nutrient uptake traits from Edwards et al (2015)
 * Thermal traits from Chen (2015)
+* Cell and natural unit biovolumes from Kremer et al (2014)
+
+
+[Chen B. (2015) Patterns of thermal limits of phytoplankton. Journal of Plankton Research 37, 285–292.](http://www.plankt.oxfordjournals.org/cgi/doi/10.1093/plankt/fbv009)
+
+[Edwards K.F., Klausmeier C.A. & Litchman E. (2015) Nutrient utilization traits of phytoplankton. Ecology 96, 2311–2311.](http://www.esajournals.org/doi/abs/10.1890/14-2252.1)
+
+[Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. Ecology 95, 2984.](http://www.esajournals.org/doi/abs/10.1890/14-0603.1)
+
+## Installation
+
+phytotraitr is not available from CRAN.
+
+You can install directly from github with:
+```R
+# install.packages("devtools")
+devtools::install_github("andrewdolman/phytotraitr")
+```
 
 ## Usage
 
 ```{r, echo=FALSE, message=FALSE}
 library(knitr)
-library(phytotraitr)
 library(dplyr)
-library(tidyr)
-library(ggplot2)
+library(phytotraitr)
 ```
+
+Each table has a corresponding *_meta table with details about each variable. The first three columns of the meta data are also found in the help files for each table.
 
 ```{r tables, results='markup'}
-#kable(Edwards_nutrient_traits[1:10,])
-kable(Edwards_nutrient_traits_meta, format = "markdown")
-kable(Chen_thermal_traits_meta, format = "markdown")
+kable(Edwards_nutrient_traits[1:10,1:6])
+kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
 ```
 
-```{r, message=FALSE}
-p <- Edwards_nutrient_traits %>% 
-  ggplot(aes(x = taxon, y = `vmax_p`, fill = system, colour=system)) +
-  geom_point(position = position_jitterdodge(jitter.width = 0.2)) + 
-  coord_flip() +
-  scale_y_continuous(trans = "log10")
-p
-```
+## Consistency
 
-```{r, message=FALSE, fig.height=12}
-Edwards_nutrient_traits_long <- Edwards_nutrient_traits %>%
-  select(-species, -isolate, -citation, -c_citation) %>% 
-  gather(Group, Value, -taxon, - system, -temperature, -irradiance, -light_hours, -synonym) %>% 
-  filter(complete.cases(Value)) %>% 
-  mutate(Value = as.numeric(Value))
+The data from the separate publications have not been harmonized - i.e. variable names may differ (e.g. species, Species) and they may use different taxonomy.
 
-p <- Edwards_nutrient_traits_long %>% 
-  ggplot(aes(x = Value)) +
-  geom_histogram() + 
-  facet_wrap(~Group, scales = "free_y", ncol = 4) +
-  theme(aspect.ratio = 1) + 
-  scale_x_continuous(trans = "log10")
-p
-```
 
-```{r chen1}
-p <- Chen_thermal_traits %>% 
-  ggplot(aes(x = T_g_min, y=T_g_max)) %>% 
-  +  geom_point(position = position_jitter(width = 0.2, height = 0.2))
-p
+## Full list of dataframes
+
+```{r}
+sets <- data(package = "phytotraitr")  
+sets <- data.frame(sets[[3]])  %>% 
+  select(Item, Title)
+
+kable(sets)
 ```
 

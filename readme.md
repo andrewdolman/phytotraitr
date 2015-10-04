@@ -1,147 +1,111 @@
 # phytotraitr
 Andrew M. Dolman  
-`r format(Sys.time(), "%d %B, %Y")`  
+`r format(Sys.time(), '%d %B, %Y')`  
+*********************
+This package contains a compilation of compilations of published phytoplankton trait data. 
 
-A compilation of published phytoplankton trait data compilations. 
-
-Contains:
+## Contents:
 
 * Nutrient uptake traits from Edwards et al (2015)
 * Thermal traits from Chen (2015)
+* Cell and natural unit biovolumes from Kremer et al (2014)
+
+
+[Chen B. (2015) Patterns of thermal limits of phytoplankton. Journal of Plankton Research 37, 285292.](http://www.plankt.oxfordjournals.org/cgi/doi/10.1093/plankt/fbv009)
+
+[Edwards K.F., Klausmeier C.A. & Litchman E. (2015) Nutrient utilization traits of phytoplankton. Ecology 96, 23112311.](http://www.esajournals.org/doi/abs/10.1890/14-2252.1)
+
+[Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. Ecology 95, 2984.](http://www.esajournals.org/doi/abs/10.1890/14-0603.1)
+
+## Installation
+
+phytotraitr is not available from CRAN.
+
+You can install directly from github with:
+```R
+# install.packages("devtools")
+devtools::install_github("andrewdolman/phytotraitr")
+```
 
 ## Usage
 
 
 
-
-```r
-#kable(Edwards_nutrient_traits[1:10,])
-kable(Edwards_nutrient_traits_meta, format = "markdown")
-```
-
-
-
-|﻿Column name  |Variable definition                   |Units                      |Storage type   |
-|:-----------|:-------------------------------------|:--------------------------|:--------------|
-|species     |Species name                          |text                       |string         |
-|isolate     |Isolate ID                            |text                       |string         |
-|taxon       |Taxon name                            |text                       |string         |
-|system      |Freshwater/marine                     |text                       |string         |
-|temperature |Culture temperature                   |°C                         |floating point |
-|irradiance  |Culture irradiance                    |µmol photons m^-2^ s^-1^   |floating point |
-|light_hours |Culture daylength                     |hr                         |integer        |
-|synonym     |Former species name                   |text                       |string         |
-|volume      |Cell volume                           |µm^3^                      |floating point |
-|c_per_cell  |Carbon per cell                       |µmol cell^-1^              |floating point |
-|c_citation  |C per cell citation                   |integer                    |integer        |
-|mu_inf_amm  |µ~inf~ for ammonium-limited growth    |day^-1^                    |floating point |
-|mu_amm      |µ~max~ for ammonium-limited growth    |day^-1^                    |floating point |
-|k_amm_m     |K~m~ for ammonium-limited growth      |µmol L^-1^                 |floating point |
-|k_amm       |K for ammonium uptake                 |µmol L^-1^                 |floating point |
-|vmax_amm    |V~max~ for ammonium uptake            |µmol N cell^-1^ day^-1^    |floating point |
-|vmax_amm_c  |V~max~:C for ammonium uptake          |µmol N µmol C^-1^ day ^-1^ |floating point |
-|qmin_amm    |Q~min~ for ammonium-limited growth    |µmol N cell^-1^            |floating point |
-|qmin_amm_c  |Q~min~:C for ammonium-limited growth  |µmol N µmol C^-1^          |floating point |
-|qmax_amm    |Q~max~ for ammonium-limited growth    |µmol N cell^-1^            |floating point |
-|qmax_amm_c  |Q~max~:C for ammonium-limited growth  |µmol N µmol C^-1^          |floating point |
-|mu_inf_nit  |µ~inf~ for nitrate-limited growth     |day^-1^                    |floating point |
-|mu_nit      |µ~max~ for nitrate-limited growth     |day^-1^                    |floating point |
-|k_nit_m     |K~m~ for nitrate-limited growth       |µmol L^-1^                 |floating point |
-|k_nit       |K for nitrate uptake                  |µmol L^-1^                 |floating point |
-|vmax_nit    |V~max~ for nitrate uptake             |µmol N cell^-1^ day^-1^    |floating point |
-|vmax_nit_c  |V~max~:C for nitrate uptake           |µmol N µmol C^-1^ day^-1^  |floating point |
-|qmin_nit    |Q~min~ for nitrate-limited growth     |µmol N cell^-1^            |floating point |
-|qmin_nit_c  |Q~min~:C for nitrate-limited growth   |µmol N µmol C^-1^          |floating point |
-|qmax_nit    |Q~max~ for nitrate-limited growth     |µmol N cell^-1^            |floating point |
-|qmax_nit_c  |Q~max~:C for nitrate-limited growth   |µmol N µmol C^-1^          |floating point |
-|mu_inf_p    |µ~inf~ for phosphate-limited growth   |day^-1^                    |floating point |
-|mu_p        |µmax for phosphate-limited growth     |day^-1^                    |floating point |
-|k_p_m       |Km for phosphate-limited growth       |µmol L^-1^                 |floating point |
-|k_p         |K for phosphate uptake                |µmol L^-1^                 |floating point |
-|vmax_p      |V~max~ for phosphate uptake           |µmol P cell^-1^ day^-1^    |floating point |
-|vmax_p_c    |V~max~:C for phosphate uptake         |µmol P µmol C^-1^ day^-1^  |floating point |
-|qmin_p      |Q~min~ for phosphate-limited growth   |µmol P cell^-1^            |floating point |
-|qmin_p_c    |Q~min~:C for phosphate-limited growth |µmol P µmol C^-1^          |floating point |
-|qmax_p      |Q~max~ for phosphate-limited growth   |µmol P cell^-1^            |floating point |
-|qmax_p_c    |Q~max~:C for phosphate-limited growth |µmol P µmol C^-1^          |floating point |
-|citation    |Publication code                      |integer                    |integer        |
-
-```r
-kable(Chen_thermal_traits_meta, format = "markdown")
-```
-
-
-
-|Variable        |Description                              |Units |
-|:---------------|:----------------------------------------|:-----|
-|References      |References                               |NA    |
-|ID              |ID                                       |NA    |
-|Phylum          |Phylum                                   |NA    |
-|Class           |Class                                    |NA    |
-|Order           |Order                                    |NA    |
-|Family          |Family                                   |NA    |
-|Genus           |Genus                                    |NA    |
-|Species         |Species                                  |NA    |
-|Habitat         |Habitat                                  |NA    |
-|T_g_min         |Lowest growth temperature °C             |°C    |
-|T_g_max         |Highest growth temperature °C            |°C    |
-|T_g_opt         |Optimal growth temperature °C            |°C    |
-|mu_max          |Maximal growth rate d^-1 ^               |d^-1  |
-|Longitude       |Longitude °E                             |°E    |
-|Latitude        |Latitude °N                              |°N    |
-|Cell_volume     |Cell Volume µm^3^                        |µm^3^ |
-|Thermal_breadth |Thermal breadth °C                       |°C    |
-|T_env_mean      |Environmental annual mean temperature °C |°C    |
-|T_env_min       |Environmental lowest temperature °C      |°C    |
-|T_env_max       |Environmental highest temperature °C     |°C    |
-|T_env_range     |Environmental temperature range °C       |°C    |
+Each table has a corresponding *_meta table with details about each variable. The first three columns of the meta data are also found in the help files for each table.
 
 
 ```r
-p <- Edwards_nutrient_traits %>% 
-  ggplot(aes(x = taxon, y = `vmax_p`, fill = system, colour=system)) +
-  geom_point(position = position_jitterdodge(jitter.width = 0.2)) + 
-  coord_flip() +
-  scale_y_continuous(trans = "log10")
-p
+kable(Edwards_nutrient_traits[1:10,1:6])
 ```
 
-```
-## Warning: Removed 240 rows containing missing values (geom_point).
+
+
+species                   isolate      taxon    system        temperature   irradiance
+------------------------  -----------  -------  -----------  ------------  -----------
+Cyclotella cryptica       SAG 1070-1   diatom   freshwater           20.0     60.00000
+Nitzschia closterium      NA           diatom   marine               20.0     60.00000
+Planktothrix agardhii     NA           cyano    freshwater           24.0     37.00000
+Planktothrix agardhii     NA           cyano    freshwater           15.5     37.00000
+Planktothrix agardhii     NA           cyano    freshwater           20.5     37.00000
+Planktothrix agardhii     NA           cyano    freshwater           25.5     37.00000
+Planktothrix agardhii     NA           cyano    freshwater           15.4     66.40000
+Scenedesmus quadricauda   NA           green    freshwater            5.0     16.60578
+Scenedesmus quadricauda   NA           green    freshwater           10.0     33.21156
+Scenedesmus quadricauda   NA           green    freshwater           15.0    116.24045
+
+```r
+kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
 ```
 
-![](readme_files/figure-html/unnamed-chunk-2-1.png) 
+
+
+|﻿Column name  |Variable definition |Units                    |Storage type   |
+|:-----------|:-------------------|:------------------------|:--------------|
+|species     |Species name        |text                     |string         |
+|isolate     |Isolate ID          |text                     |string         |
+|taxon       |Taxon name          |text                     |string         |
+|system      |Freshwater/marine   |text                     |string         |
+|temperature |Culture temperature |°C                       |floating point |
+|irradiance  |Culture irradiance  |µmol photons m^-2^ s^-1^ |floating point |
+
+## Consistency
+
+The data from the separate publications have not been harmonized - i.e. variable names may differ (e.g. species, Species) and they may use different taxonomy.
+
+
+## Full list of dataframes
 
 
 ```r
-Edwards_nutrient_traits_long <- Edwards_nutrient_traits %>%
-  select(-species, -isolate, -citation, -c_citation) %>% 
-  gather(Group, Value, -taxon, - system, -temperature, -irradiance, -light_hours, -synonym) %>% 
-  filter(complete.cases(Value)) %>% 
-  mutate(Value = as.numeric(Value))
+sets <- data(package = "phytotraitr")  
+sets <- data.frame(sets[[3]])  %>% 
+  select(Item, Title)
 
-p <- Edwards_nutrient_traits_long %>% 
-  ggplot(aes(x = Value)) +
-  geom_histogram() + 
-  facet_wrap(~Group, scales = "free_y", ncol = 4) +
-  theme(aspect.ratio = 1) + 
-  scale_x_continuous(trans = "log10")
-p
+kable(sets)
 ```
 
-![](readme_files/figure-html/unnamed-chunk-3-1.png) 
 
 
-```r
-p <- Chen_thermal_traits %>% 
-  ggplot(aes(x = T_g_min, y=T_g_max)) %>% 
-  +  geom_point(position = position_jitter(width = 0.2, height = 0.2))
-p
-```
-
-```
-## Warning: Removed 228 rows containing missing values (geom_point).
-```
-
-![](readme_files/figure-html/chen1-1.png) 
+Item                              Title                                                                                                      
+--------------------------------  -----------------------------------------------------------------------------------------------------------
+Chen_thermal_traits               Chen (2015) Thermal Traits.                                                                                
+Chen_thermal_traits_meta          Chen (2015) Thermal Traits metadata                                                                        
+Chen_thermal_traits_references    Chen (2015) Thermal Traits references.                                                                     
+Edwards_cell_volumes              Cell volumes of phytoplankton.                                                                             
+Edwards_cell_volumes_meta                                                                                                                    
+Edwards_citations                 Citation information for nutrient utilization traits.                                                      
+Edwards_nutrient_traits           Nutrient utilization traits of phytoplankton.                                                              
+Edwards_nutrient_traits_meta                                                                                                                 
+Kremer_raw                        Phytoplankton cell and natural unit biovolumes. Raw biovolume data - pre quality control.                  
+Kremer_raw_meta                                                                                                                              
+Kremer_taxa                       Phytoplankton cell and natural unit biovolumes. Taxonomic look-up table based on ITIS classifications      
+Kremer_taxa_meta                                                                                                                             
+Kremer_volumes_genus              Phytoplankton cell and natural unit biovolumes. Genus-level biovolume data.                                
+Kremer_volumes_genus_agg          Phytoplankton cell and natural unit biovolumes. Genus-level aggregated biovolume data and full taxonomy.   
+Kremer_volumes_genus_agg_meta                                                                                                                
+Kremer_volumes_genus_meta                                                                                                                    
+Kremer_volumes_species            Phytoplankton cell and natural unit biovolumes. Species-level biovolume data.                              
+Kremer_volumes_species_agg        Phytoplankton cell and natural unit biovolumes. Species-level aggregated biovolume data and full taxonomy. 
+Kremer_volumes_species_agg_meta                                                                                                              
+Kremer_volumes_species_meta                                                                                                                  
 
