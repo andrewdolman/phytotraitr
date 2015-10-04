@@ -16,6 +16,8 @@
 #' @usage data(Edwards_nutrient_traits)
 #' 
 #' @format A data frame with 384 rows and 42 variables:
+#' 
+#' \bold{Encoding }
 #' \encoding{UTF-8}
 #' \tabular{llll}{
 #' \bold{Column name} \tab \bold{Variable definition} \tab \bold{Units} \tab \bold{Storage type} \cr
@@ -93,6 +95,8 @@
 #' @usage data(Edwards_cell_volumes)
 #' 
 #' @format A data frame with 134 rows and 4 variables:
+#' 
+#' \bold{Encoding }
 #' \encoding{UTF-8}
 #' \tabular{llll}{
 #' \bold{Column name} \tab \bold{Variable definition} \tab \bold{Units} \tab \bold{Storage type} \cr
@@ -119,6 +123,8 @@
 #' @usage data(Chen_thermal_traits)
 #' 
 #' @format A data frame with 339 rows and 21 variables:
+#' 
+#' \bold{Encoding }
 #' \encoding{UTF-8}
 #' \tabular{lll}{
 #' \bold{Variable} \tab \bold{Description} \tab \bold{Units} \cr
@@ -169,3 +175,259 @@
 
 ################################################################################
 ################################################################################
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Raw biovolume data - pre quality control.
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_raw)
+#' 
+#' @format A data frame with 312238 rows and 18 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Units} \cr
+#' nu.measurement.ID  \tab Index for individual estimate of a natural unit's biovolume                                     \tab -                     \cr
+#' data.source        \tab Source of biovolume data                                                                        \tab -                     \cr
+#' location           \tab Sampling location as reported in original data source                                           \tab -                     \cr
+#' sample.date        \tab Date of biovolume sample, from original data source (when reported)                             \tab Days                  \cr
+#' source.ID          \tab Sample ID from original data source                                                             \tab -                     \cr
+#' source.taxa.name   \tab Taxa name reported in source data.                                                              \tab -                     \cr
+#' source.taxa.ID     \tab Taxonomic ID code from original data source                                                     \tab -                     \cr
+#' original.taxa.name \tab Taxa name, combining genus or genus + species names from original data source.                  \tab -                     \cr
+#' genus              \tab Genus name                                                                                      \tab -                     \cr
+#' species            \tab Species name                                                                                    \tab -                     \cr
+#' subspecies         \tab Subspecies name                                                                                 \tab -                     \cr
+#' variety            \tab Variety name                                                                                    \tab -                     \cr
+#' form               \tab Form name                                                                                       \tab -                     \cr
+#' nu                 \tab Descriptor of natural unit type                                                                 \tab -                     \cr
+#' cells.per.nu       \tab Cells per natural unit                                                                          \tab Cells per natural unit\cr
+#' nu.biovol          \tab Biovolume corresponding to a natural unit of the specified taxa                                 \tab log10(Î¼m^3^)         \cr
+#' cell.biovol        \tab Biovolume of an individual cell of the specified taxa (which may be the same as a natural unit) \tab log10(Î¼m^3^)         \cr
+#' comments           \tab Notes from original data source                                                                 \tab -                     
+#'}
+#' 
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_raw"
+
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Species-level biovolume data.
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_volumes_species)
+#' 
+#' @format A data frame with 162176 rows and 12 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Units} \cr
+#' nu.measurement.ID  \tab Index for individual estimate of a natural unit's biovolume                                     \tab -                     \cr
+#' data.source        \tab Source of biovolume data                                                                        \tab -                     \cr
+#' location           \tab Sampling location as reported in original data source                                           \tab -                     \cr
+#' original.taxa.name \tab Genus + species name generated from original data source's taxa identification                  \tab -                     \cr
+#' accepted.taxa.name \tab Accepted genus + species name based on the ITIS categorization of original.taxa.name            \tab -                     \cr
+#' level              \tab Level to which taxa was identified                                                              \tab -                     \cr
+#' genus              \tab Genus name                                                                                      \tab -                     \cr
+#' species            \tab Species name                                                                                    \tab -                     \cr
+#' nu                 \tab Descriptor of natural unit type                                                                 \tab -                     \cr
+#' cells.per.nu       \tab Cells per natural unit                                                                          \tab Cells per natural unit\cr
+#' nu.biovol          \tab Biovolume corresponding to a natural unit of the specified taxa                                 \tab log10(µm^3^)          \cr
+#' cell.biovol        \tab Biovolume of an individual cell of the specified taxa (which may be the same as a natural unit) \tab log10(µm^3^)          
+#'}
+#' 
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_volumes_species"
+
+
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Genus-level biovolume data.
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_volumes_genus)
+#' 
+#' @format A data frame with 273666 rows and 12 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Units} \cr
+#' nu.measurement.ID  \tab Index for individual estimate of a natural unit's biovolume                                     \tab -                     \cr
+#' data.source        \tab Source of biovolume data                                                                        \tab -                     \cr
+#' location           \tab Sampling location as reported in original data source                                           \tab -                     \cr
+#' original.taxa.name \tab Genus or genus + species name generated from original data source's taxa identification         \tab -                     \cr
+#' accepted.taxa.name \tab Accepted genus or genus + species name based on the ITIS categorization of original.taxa.name   \tab -                     \cr
+#' level              \tab Level to which taxa was identified                                                              \tab -                     \cr
+#' genus              \tab Genus name                                                                                      \tab -                     \cr
+#' species            \tab Species name                                                                                    \tab -                     \cr
+#' nu                 \tab Descriptor of natural unit type                                                                 \tab -                     \cr
+#' cells.per.nu       \tab Cells per natural unit                                                                          \tab Cells per natural unit\cr
+#' nu.biovol          \tab Biovolume corresponding to a natural unit of the specified taxa                                 \tab log10(µm^3^)          \cr
+#' cell.biovol        \tab Biovolume of an individual cell of the specified taxa (which may be the same as a natural unit) \tab log10(µm^3^)          
+#'}
+#' 
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_volumes_genus"
+
+
+
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Species-level aggregated biovolume data and full taxonomy.
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_volumes_species_agg)
+#' 
+#' @format A data frame with 1261 rows and 23 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Units} \cr
+#' accepted.taxa.name \tab Accepted genus + species name based on the ITIS categorization of original.taxa.name Used for aggregating biovolume data \tab -                     \cr
+#' min_nu.biovol      \tab Taxon specific minimum biovolume                                                                                         \tab log10(µm^3^)          \cr
+#' mn_nu.biovol       \tab Taxon specific mean biovolume                                                                                            \tab log10(µm^3^)          \cr
+#' mdn_nu.biovol      \tab Taxon specific median biovolume                                                                                          \tab log10(µm^3^)          \cr
+#' max_nu.biovol      \tab Taxon specific maximum biovolume                                                                                         \tab log10(µm^3^)          \cr
+#' sd_nu.biovol       \tab Taxon specific standard deviation of biovolume                                                                           \tab log10(µm^3^)          \cr
+#' n                  \tab Number of biovolume estimates for given taxa                                                                             \tab -                     \cr
+#' mn_cells.per.nu    \tab Mean number of cells per natural unit                                                                                    \tab Cells per natural unit\cr
+#' n_sources          \tab Number of distinct data sources containing biovolume estimates for given taxa                                            \tab -                     \cr
+#' w.tsn              \tab Working TSN from ITIS classification for given taxa                                                                      \tab -                     \cr
+#' level              \tab Lowest level of identification                                                                                           \tab -                     \cr
+#' kingdom            \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' subkingdom         \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' infrakingdom       \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' division           \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' subdivision        \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' phylum             \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' class              \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' subclass           \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' order              \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' family             \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' genus              \tab Name of the taxa at this level                                                                                           \tab -                     \cr
+#' species            \tab Name of the taxa at this level                                                                                           \tab -                     
+#'} 
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_volumes_species_agg"
+
+
+
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Genus-level aggregated biovolume data and full taxonomy.
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_volumes_genus_agg)
+#' 
+#' @format A data frame with 393 rows and 22 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Units} \cr
+#' accepted.taxa.name \tab Accepted genus name based on the ITIS categorization of original.taxa.name Used for aggregating biovolume data \tab -                     \cr
+#' min_nu.biovol      \tab Taxon specific minimum biovolume                                                                               \tab log10(µm^3^)          \cr
+#' mn_nu.biovol       \tab Taxon specific mean biovolume                                                                                  \tab log10(µm^3^)          \cr
+#' mdn_nu.biovol      \tab Taxon specific median biovolume                                                                                \tab log10(µm^3^)          \cr
+#' max_nu.biovol      \tab Taxon specific maximum biovolume                                                                               \tab log10(µm^3^)          \cr
+#' sd_nu.biovol       \tab Taxon specific standard deviation of biovolume                                                                 \tab log10(µm^3^)          \cr
+#' n                  \tab Number of biovolume estimates for given taxa                                                                   \tab -                     \cr
+#' mn_cells.per.nu    \tab Mean number of cells per natural unit                                                                          \tab Cells per natural unit\cr
+#' n_sources          \tab Number of distinct data sources containing biovolume estimates for given taxa                                  \tab -                     \cr
+#' w.tsn              \tab Working TSN from ITIS classification for given taxa                                                            \tab -                     \cr
+#' level              \tab Lowest level of identification                                                                                 \tab -                     \cr
+#' kingdom            \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' subkingdom         \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' infrakingdom       \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' division           \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' subdivision        \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' phylum             \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' class              \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' subclass           \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' order              \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' family             \tab Name of the taxa at this level                                                                                 \tab -                     \cr
+#' genus              \tab Name of the taxa at this level                                                                                 \tab -                     
+#'}
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_volumes_genus_agg"
+
+
+#' Phytoplankton cell and natural unit biovolumes. 
+#' Taxonomic look-up table based on ITIS classifications
+#'
+#' Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) 
+#' A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. 
+#' Ecology 95, 2984.
+#' 
+#' Ecological Archives E095-257-D1
+#' 
+#'   
+#' @usage data(Kremer_taxa)
+#' 
+#' @format A data frame with 2572 rows and 23 variables:
+#' 
+#' \bold{Encoding }
+#' \encoding{UTF-8}
+#' \tabular{lll}{
+#' \bold{Variable} \tab \bold{Definition} \tab \bold{Storage type} \cr
+#' original.taxa.name \tab Genus or genus + species name generated from original data source's taxa identification       \tab Character\cr
+#' accepted.taxa.name \tab Accepted genus or genus + species name based on the ITIS categorization of original.taxa.name \tab Character\cr
+#' original.genus     \tab Genus name from original data source's taxa identification                                    \tab Character\cr
+#' w.tsn              \tab Working TSN from ITIS classification for given taxa                                           \tab Integer  \cr
+#' tsn                \tab TSN matching original.taxa.name, if any                                                       \tab Integer  \cr
+#' genus.tsn          \tab TSN matching original.genus, if any                                                           \tab Integer  \cr
+#' a.tsn              \tab Accepted TSN reflecting taxonomic changes in ITIS to original tsn match                       \tab Integer  \cr
+#' a.genus.tsn        \tab Accepted genus TSN reflecting taxonomic changes in ITIS to original genus.tsn match           \tab Integer  \cr
+#' level              \tab Lowest level of taxonomic identificantion                                                     \tab Character\cr
+#' kingdom            \tab Name of the taxa at this level                                                                \tab Character\cr
+#' subkingdom         \tab Name of the taxa at this level                                                                \tab Character\cr
+#' infrakingdom       \tab Name of the taxa at this level                                                                \tab Character\cr
+#' division           \tab Name of the taxa at this level                                                                \tab Character\cr
+#' subdivision        \tab Name of the taxa at this level                                                                \tab Character\cr
+#' phylum             \tab Name of the taxa at this level                                                                \tab Character\cr
+#' class              \tab Name of the taxa at this level                                                                \tab Character\cr
+#' subclass           \tab Name of the taxa at this level                                                                \tab Character\cr
+#' order              \tab Name of the taxa at this level                                                                \tab Character\cr
+#' family             \tab Name of the taxa at this level                                                                \tab Character\cr
+#' genus              \tab Name of the taxa at this level                                                                \tab Character\cr
+#' species            \tab Name of the taxa at this level                                                                \tab Character\cr
+#' variety            \tab Name of the taxa at this level                                                                \tab Character\cr
+#' form               \tab Name of the taxa at this level                                                                \tab Character
+#'}
+#' @source \url{http://www.esapubs.org/archive/ecol/E095/257/}
+"Kremer_taxa"
+

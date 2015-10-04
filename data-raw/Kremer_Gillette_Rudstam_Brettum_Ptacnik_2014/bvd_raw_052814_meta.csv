@@ -1,0 +1,19 @@
+Variable,Definition,Units,Storage type,Values or range,Missing data code
+nu.measurement.ID ,Index for individual estimate of a natural unit's biovolume,-,Integer,1 to 338700,none
+data.source ,Source of biovolume data,-,Character,"ANSP, CBFS.Oneida, CBFS.Onondaga, BDMA.1993-2007, BDMA.2008-2012, NTL.LTER, REBECCA",none
+location,Sampling location as reported in original data source,-,Character,Various,NA
+sample.date,"Date of biovolume sample, from original data source (when reported)",Days,Character,"year-month-day format, eg, yyyy-mm-dd ",NA
+source.ID,Sample ID from original data source,-,Integer,Various,NA
+source.taxa.name,Taxa name reported in source data.,-,Character,Unedited/not standardized.,none
+source.taxa.ID,Taxonomic ID code from original data source,-,Character,Various,NA
+original.taxa.name,"Taxa name, combining genus or genus + species names from original data source.",-,Character,Various,none
+genus ,Genus name,-,Character,Various ,none
+species ,Species name,-,Character,Various ,NA
+subspecies ,Subspecies name,-,Character,Various ,NA
+variety ,Variety name,-,Character,Various ,NA
+form,Form name,-,Character,Various ,NA
+nu,Descriptor of natural unit type,-,Character,"Cell, Cell-Motile, Cell-Nonmotile, Colonial-Motile, Colonial-Nonmotile, Complex-Filament, Filament, Lateral-Filament, Multi-Filament, palmeloid stage",NA
+cells.per.nu,Cells per natural unit,Cells per natural unit,Numeric,1 to 3750,NA
+nu.biovol,Biovolume corresponding to a natural unit of the specified taxa,log10(μm^3^),Numeric,-1.754 to 7.525,none
+cell.biovol,Biovolume of an individual cell of the specified taxa (which may be the same as a natural unit),log10(μm^3^),Numeric,-1.754 to 7.525,NA
+comments,Notes from original data source,-,Character,Various,NA

@@ -1,0 +1,24 @@
+Variable,Definition,Units,Storage type,Values or range,Missing data code
+accepted.taxa.name,Accepted genus + species name based on the ITIS categorization of original.taxa.name Used for aggregating biovolume data,-,Character,Various,none
+min_nu.biovol,Taxon specific minimum biovolume,log10(μm^3^),Numeric,-0.310 to 5.72,none
+mn_nu.biovol,Taxon specific mean biovolume,log10(μm^3^),Numeric,0.203 to 6.82,none
+mdn_nu.biovol,Taxon specific median biovolume,log10(μm^3^),Numeric,0.196 to 6.62,none
+max_nu.biovol,Taxon specific maximum biovolume,log10(μm^3^),Numeric,0.548 to 7.53,none
+sd_nu.biovol,Taxon specific standard deviation of biovolume,log10(μm^3^),Numeric,0 to 1.52,NA
+n,Number of biovolume estimates for given taxa,-,Integer,1 to 4940,none
+mn_cells.per.nu,Mean number of cells per natural unit,Cells per natural unit,Numeric,1 to 226.7,NA
+n_sources,Number of distinct data sources containing biovolume estimates for given taxa,-,Integer,1 to 7,none
+w.tsn,Working TSN from ITIS classification for given taxa,-,Integer,608 to 772357,none
+level,Lowest level of identification,-,Character,Species or variety,none
+kingdom,Name of the taxa at this level,-,Character,"Chromista, Monera, Plantae",none
+subkingdom,Name of the taxa at this level,-,Character,Protozoa,NA
+infrakingdom,Name of the taxa at this level,-,Character,Various,NA
+division,Name of the taxa at this level,-,Character,Various,NA
+subdivision,Name of the taxa at this level,-,Character,Various,NA
+phylum,Name of the taxa at this level,-,Character,Various,NA
+class,Name of the taxa at this level,-,Character,Various,none
+subclass,Name of the taxa at this level,-,Character,Various,NA
+order,Name of the taxa at this level,-,Character,Various,NA
+family,Name of the taxa at this level,-,Character,Various,none
+genus,Name of the taxa at this level,-,Character,Various,none
+species,Name of the taxa at this level,-,Character,Various,none

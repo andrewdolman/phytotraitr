@@ -1,0 +1,24 @@
+Variable,Definition,Storage type,Values or range,Missing data code
+original.taxa.name,Genus or genus + species name generated from original data source's taxa identification,Character,Various,none
+accepted.taxa.name,Accepted genus or genus + species name based on the ITIS categorization of original.taxa.name,Character,Various,none
+original.genus,Genus name from original data source's taxa identification,Character,Various,none
+w.tsn,Working TSN from ITIS classification for given taxa,Integer,605 to 772357,none
+tsn,"TSN matching original.taxa.name, if any",Integer,605 to 772357,NA
+genus.tsn,"TSN matching original.genus, if any",Integer,609 to 591019,NA
+a.tsn,Accepted TSN reflecting taxonomic changes in ITIS to original tsn match,Integer,605 to 772357,NA
+a.genus.tsn,Accepted genus TSN reflecting taxonomic changes in ITIS to original genus.tsn match,Integer,609 to 591320,NA
+level,Lowest level of taxonomic identificantion,Character,"Genus, species, variety, form",none
+kingdom,Name of the taxa at this level,Character,"Chromista, Monera, Plantae, Protozoa",none
+subkingdom,Name of the taxa at this level,Character,Various,NA
+infrakingdom,Name of the taxa at this level,Character,Various,NA
+division,Name of the taxa at this level,Character,Various,NA
+subdivision,Name of the taxa at this level,Character,Various,NA
+phylum,Name of the taxa at this level,Character,Various ,NA
+class,Name of the taxa at this level,Character,Various ,none
+subclass,Name of the taxa at this level,Character,Various ,none
+order,Name of the taxa at this level,Character,Various ,NA
+family,Name of the taxa at this level,Character,Various ,none
+genus,Name of the taxa at this level,Character,Various ,none
+species,Name of the taxa at this level,Character,Various ,NA
+variety,Name of the taxa at this level,Character,Various ,NA
+form,Name of the taxa at this level,Character,Various ,NA
