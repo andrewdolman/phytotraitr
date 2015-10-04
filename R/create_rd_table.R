@@ -6,9 +6,9 @@
 #'  https://cran.r-project.org/web/packages/roxygen2/vignettes/formatting.html
 #' @usage cat(tabular(df))
 #' @return an rd compatible dataframe
-#' @export tabular
+#' @export create_rd_table
 
-tabular <- function(df, ...) {
+create_rd_table <- function(df, ...) {
   stopifnot(is.data.frame(df))
   
   df[[1]] <- paste0("#' ", df[[1]])
