@@ -44,7 +44,7 @@ library(phytotraitr)
 Each table has a corresponding *_meta table with details about each variable. The first three columns of the meta data are also found in the help files for each table.
 
 ```{r tables, results='markup'}
-kable(Edwards_nutrient_traits[1:10,1:6])
+kable(Edwards_nutrient_traits[1:10,1:6], format = "markdown")
 kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
 ```
 
@@ -60,6 +60,6 @@ sets <- data(package = "phytotraitr")
 sets <- data.frame(sets[[3]])  %>% 
   select(Item, Title)
 
-kable(sets)
+kable(sets, format = "markdown")
 ```
 

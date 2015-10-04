@@ -35,23 +35,23 @@ Each table has a corresponding *_meta table with details about each variable. Th
 
 
 ```r
-kable(Edwards_nutrient_traits[1:10,1:6])
+kable(Edwards_nutrient_traits[1:10,1:6], format = "markdown")
 ```
 
 
 
-species                   isolate      taxon    system        temperature   irradiance
-------------------------  -----------  -------  -----------  ------------  -----------
-Cyclotella cryptica       SAG 1070-1   diatom   freshwater           20.0     60.00000
-Nitzschia closterium      NA           diatom   marine               20.0     60.00000
-Planktothrix agardhii     NA           cyano    freshwater           24.0     37.00000
-Planktothrix agardhii     NA           cyano    freshwater           15.5     37.00000
-Planktothrix agardhii     NA           cyano    freshwater           20.5     37.00000
-Planktothrix agardhii     NA           cyano    freshwater           25.5     37.00000
-Planktothrix agardhii     NA           cyano    freshwater           15.4     66.40000
-Scenedesmus quadricauda   NA           green    freshwater            5.0     16.60578
-Scenedesmus quadricauda   NA           green    freshwater           10.0     33.21156
-Scenedesmus quadricauda   NA           green    freshwater           15.0    116.24045
+|species                 |isolate    |taxon  |system     | temperature| irradiance|
+|:-----------------------|:----------|:------|:----------|-----------:|----------:|
+|Cyclotella cryptica     |SAG 1070-1 |diatom |freshwater |        20.0|   60.00000|
+|Nitzschia closterium    |NA         |diatom |marine     |        20.0|   60.00000|
+|Planktothrix agardhii   |NA         |cyano  |freshwater |        24.0|   37.00000|
+|Planktothrix agardhii   |NA         |cyano  |freshwater |        15.5|   37.00000|
+|Planktothrix agardhii   |NA         |cyano  |freshwater |        20.5|   37.00000|
+|Planktothrix agardhii   |NA         |cyano  |freshwater |        25.5|   37.00000|
+|Planktothrix agardhii   |NA         |cyano  |freshwater |        15.4|   66.40000|
+|Scenedesmus quadricauda |NA         |green  |freshwater |         5.0|   16.60578|
+|Scenedesmus quadricauda |NA         |green  |freshwater |        10.0|   33.21156|
+|Scenedesmus quadricauda |NA         |green  |freshwater |        15.0|  116.24045|
 
 ```r
 kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
@@ -81,31 +81,31 @@ sets <- data(package = "phytotraitr")
 sets <- data.frame(sets[[3]])  %>% 
   select(Item, Title)
 
-kable(sets)
+kable(sets, format = "markdown")
 ```
 
 
 
-Item                              Title                                                                                                      
---------------------------------  -----------------------------------------------------------------------------------------------------------
-Chen_thermal_traits               Chen (2015) Thermal Traits.                                                                                
-Chen_thermal_traits_meta          Chen (2015) Thermal Traits metadata                                                                        
-Chen_thermal_traits_references    Chen (2015) Thermal Traits references.                                                                     
-Edwards_cell_volumes              Cell volumes of phytoplankton.                                                                             
-Edwards_cell_volumes_meta                                                                                                                    
-Edwards_citations                 Citation information for nutrient utilization traits.                                                      
-Edwards_nutrient_traits           Nutrient utilization traits of phytoplankton.                                                              
-Edwards_nutrient_traits_meta                                                                                                                 
-Kremer_raw                        Phytoplankton cell and natural unit biovolumes. Raw biovolume data - pre quality control.                  
-Kremer_raw_meta                                                                                                                              
-Kremer_taxa                       Phytoplankton cell and natural unit biovolumes. Taxonomic look-up table based on ITIS classifications      
-Kremer_taxa_meta                                                                                                                             
-Kremer_volumes_genus              Phytoplankton cell and natural unit biovolumes. Genus-level biovolume data.                                
-Kremer_volumes_genus_agg          Phytoplankton cell and natural unit biovolumes. Genus-level aggregated biovolume data and full taxonomy.   
-Kremer_volumes_genus_agg_meta                                                                                                                
-Kremer_volumes_genus_meta                                                                                                                    
-Kremer_volumes_species            Phytoplankton cell and natural unit biovolumes. Species-level biovolume data.                              
-Kremer_volumes_species_agg        Phytoplankton cell and natural unit biovolumes. Species-level aggregated biovolume data and full taxonomy. 
-Kremer_volumes_species_agg_meta                                                                                                              
-Kremer_volumes_species_meta                                                                                                                  
+|Item                            |Title                                                                                                      |
+|:-------------------------------|:----------------------------------------------------------------------------------------------------------|
+|Chen_thermal_traits             |Chen (2015) Thermal Traits.                                                                                |
+|Chen_thermal_traits_meta        |Chen (2015) Thermal Traits metadata                                                                        |
+|Chen_thermal_traits_references  |Chen (2015) Thermal Traits references.                                                                     |
+|Edwards_cell_volumes            |Cell volumes of phytoplankton.                                                                             |
+|Edwards_cell_volumes_meta       |                                                                                                           |
+|Edwards_citations               |Citation information for nutrient utilization traits.                                                      |
+|Edwards_nutrient_traits         |Nutrient utilization traits of phytoplankton.                                                              |
+|Edwards_nutrient_traits_meta    |                                                                                                           |
+|Kremer_raw                      |Phytoplankton cell and natural unit biovolumes. Raw biovolume data - pre quality control.                  |
+|Kremer_raw_meta                 |                                                                                                           |
+|Kremer_taxa                     |Phytoplankton cell and natural unit biovolumes. Taxonomic look-up table based on ITIS classifications      |
+|Kremer_taxa_meta                |                                                                                                           |
+|Kremer_volumes_genus            |Phytoplankton cell and natural unit biovolumes. Genus-level biovolume data.                                |
+|Kremer_volumes_genus_agg        |Phytoplankton cell and natural unit biovolumes. Genus-level aggregated biovolume data and full taxonomy.   |
+|Kremer_volumes_genus_agg_meta   |                                                                                                           |
+|Kremer_volumes_genus_meta       |                                                                                                           |
+|Kremer_volumes_species          |Phytoplankton cell and natural unit biovolumes. Species-level biovolume data.                              |
+|Kremer_volumes_species_agg      |Phytoplankton cell and natural unit biovolumes. Species-level aggregated biovolume data and full taxonomy. |
+|Kremer_volumes_species_agg_meta |                                                                                                           |
+|Kremer_volumes_species_meta     |                                                                                                           |
 
