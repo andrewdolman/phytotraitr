@@ -1,6 +1,4 @@
 # phytotraitr
-Andrew M. Dolman  
-`r format(Sys.time(), '%d %B, %Y')`  
 *********************
 This package contains a compilation of compilations of published phytoplankton trait data. 
 
