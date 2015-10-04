@@ -1,11 +1,12 @@
 ## Edwards
 
-
 #' Nutrient utilization traits of phytoplankton.
 #'
 #' Data from Kyle F. Edwards, Christopher A. Klausmeier, and Elena Litchman (2015). 
 #' Nutrient utilization traits of phytoplankton. Ecology 96:2311. 
 #' http://dx.doi.org/10.1890/14-2252.1.
+#' 
+#' Table 1 of Ecological Archives E096-202-D1.
 #' 
 #' 
 #' @section Corrections:
@@ -67,13 +68,27 @@
 "Edwards_nutrient_traits"
 
 
-
-#' Cell volumes.
+#' Citation information for nutrient utilization traits.
 #'
 #' Data from Kyle F. Edwards, Christopher A. Klausmeier, and Elena Litchman (2015). 
 #' Nutrient utilization traits of phytoplankton. Ecology 96:2311. 
 #' http://dx.doi.org/10.1890/14-2252.1.
 #' 
+#' Table 2 of Ecological Archives E096-202-D1.
+#' 
+#' @usage data(Edwards_citations)
+#' 
+#' @source \url{http://www.esapubs.org/archive/ecol/E096/202/}
+"Edwards_citations"
+
+
+#' Cell volumes of phytoplankton.
+#'
+#' Data from Kyle F. Edwards, Christopher A. Klausmeier, and Elena Litchman (2015). 
+#' Nutrient utilization traits of phytoplankton. Ecology 96:2311. 
+#' http://dx.doi.org/10.1890/14-2252.1.
+#' 
+#' Table 3 of Ecological Archives E096-202-D1.
 #' 
 #' @usage data(Edwards_cell_volumes)
 #' 
@@ -88,6 +103,10 @@
 #'}
 #' @source \url{http://www.esapubs.org/archive/ecol/E096/202/}
 "Edwards_cell_volumes"
+
+
+################################################################################
+################################################################################
 
 
 ## Chen
@@ -146,3 +165,7 @@
 #' @usage data(Chen_thermal_traits_meta)
 #' @source \url{http://plankt.oxfordjournals.org/content/37/2/285/suppl/DC1}
 "Chen_thermal_traits_meta"
+
+
+################################################################################
+################################################################################
