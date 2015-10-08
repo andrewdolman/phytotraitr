@@ -9,9 +9,9 @@ This package contains a compilation of compilations of published phytoplankton t
 * Cell and natural unit biovolumes from Kremer et al (2014)
 
 
-[Chen B. (2015) Patterns of thermal limits of phytoplankton. Journal of Plankton Research 37, 285292.](http://www.plankt.oxfordjournals.org/cgi/doi/10.1093/plankt/fbv009)
+[Chen B. (2015) Patterns of thermal limits of phytoplankton. Journal of Plankton Research 37, 285-292.](http://www.plankt.oxfordjournals.org/cgi/doi/10.1093/plankt/fbv009)
 
-[Edwards K.F., Klausmeier C.A. & Litchman E. (2015) Nutrient utilization traits of phytoplankton. Ecology 96, 23112311.](http://www.esajournals.org/doi/abs/10.1890/14-2252.1)
+[Edwards K.F., Klausmeier C.A. & Litchman E. (2015) Nutrient utilization traits of phytoplankton. Ecology 96, 2311-2311.](http://www.esajournals.org/doi/abs/10.1890/14-2252.1)
 
 [Kremer C.T., Gillette J.P., Rudstam L.G., Brettum P. & Ptacnik R. (2014) A compendium of cell and natural unit biovolumes for >1200 freshwater phytoplankton species. Ecology 95, 2984.](http://www.esajournals.org/doi/abs/10.1890/14-0603.1)
 
