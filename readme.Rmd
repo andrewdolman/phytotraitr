@@ -36,15 +36,53 @@ devtools::install_github("andrewdolman/phytotraitr")
 ```{r, echo=FALSE, message=FALSE}
 library(knitr)
 library(dplyr)
+library(ggplot2)
 library(phytotraitr)
 ```
 
-Each table has a corresponding *_meta table with details about each variable. The first three columns of the meta data are also found in the help files for each table.
+Each table has a corresponding *_key table with details about each variable. The first three columns of the keys are also found in the help files for each table.
 
 ```{r tables, results='markup'}
 kable(Edwards_nutrient_traits[1:10,1:6], format = "markdown")
-kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
+kable(Edwards_nutrient_traits_key[1:6,], format = "markdown")
 ```
+
+### Minimum P cell quotas for freshwater taxa
+
+```{r min_P_C}
+p <- Edwards_nutrient_traits %>% 
+  filter(system == "freshwater",
+         complete.cases(qmin_p_c)) %>%
+  ggplot(aes(x = taxon, y = qmin_p_c)) %>% 
+  + geom_point(position = position_jitter(width = 0.05)) %>% 
+  + coord_flip() %>% 
+  + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
+  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Variable definition"],
+                              " [",
+                              Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Units"],
+                              "]"))
+p
+```
+
+
+### Maximum P cell quotas for freshwater taxa
+
+```{r max_P_C}
+p <- Edwards_nutrient_traits %>% 
+  filter(system == "freshwater",
+         complete.cases(qmax_p_c)) %>%
+  ggplot(aes(x = taxon, y = qmax_p_c)) %>% 
+  + geom_point(position = position_jitter(width = 0.05)) %>% 
+  + coord_flip() %>% 
+  + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
+  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Variable definition"],
+                              " [",
+                              Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Units"],
+                              "]"))
+p
+
+```
+
 
 ## Consistency
 

@@ -163,14 +163,14 @@
 "Chen_thermal_traits_references"
 
 
-#' Chen (2015) Thermal Traits metadata
+#' Chen (2015) Thermal Traits key
 #'
-#' Metadata for data from Chen B. (2015) Patterns of thermal limits of phytoplankton. 
+#' Key for data from Chen B. (2015) Patterns of thermal limits of phytoplankton. 
 #' Journal of Plankton Research 37, 285–292.
 #' 
-#' @usage data(Chen_thermal_traits_meta)
+#' @usage data(Chen_thermal_traits_key)
 #' @source \url{http://plankt.oxfordjournals.org/content/37/2/285/suppl/DC1}
-"Chen_thermal_traits_meta"
+"Chen_thermal_traits_key"
 
 
 ################################################################################

@@ -29,7 +29,7 @@ devtools::install_github("andrewdolman/phytotraitr")
 
 
 
-Each table has a corresponding *_meta table with details about each variable. The first three columns of the meta data are also found in the help files for each table.
+Each table has a corresponding *_key table with details about each variable. The first three columns of the keys are also found in the help files for each table.
 
 
 ```r
@@ -52,12 +52,12 @@ kable(Edwards_nutrient_traits[1:10,1:6], format = "markdown")
 |Scenedesmus quadricauda |NA         |green  |freshwater |        15.0|  116.24045|
 
 ```r
-kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
+kable(Edwards_nutrient_traits_key[1:6,], format = "markdown")
 ```
 
 
 
-|﻿Column name  |Variable definition |Units                    |Storage type   |
+|Column name |Variable definition |Units                    |Storage type   |
 |:-----------|:-------------------|:------------------------|:--------------|
 |species     |Species name        |text                     |string         |
 |isolate     |Isolate ID          |text                     |string         |
@@ -65,6 +65,48 @@ kable(Edwards_nutrient_traits_meta[1:6,], format = "markdown")
 |system      |Freshwater/marine   |text                     |string         |
 |temperature |Culture temperature |°C                       |floating point |
 |irradiance  |Culture irradiance  |µmol photons m^-2^ s^-1^ |floating point |
+
+### Minimum P cell quotas for freshwater taxa
+
+
+```r
+p <- Edwards_nutrient_traits %>% 
+  filter(system == "freshwater",
+         complete.cases(qmin_p_c)) %>%
+  ggplot(aes(x = taxon, y = qmin_p_c)) %>% 
+  + geom_point(position = position_jitter(width = 0.05)) %>% 
+  + coord_flip() %>% 
+  + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
+  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Variable definition"],
+                              " [",
+                              Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Units"],
+                              "]"))
+p
+```
+
+![](readme_files/figure-html/min_P_C-1.png) 
+
+
+### Maximum P cell quotas for freshwater taxa
+
+
+```r
+p <- Edwards_nutrient_traits %>% 
+  filter(system == "freshwater",
+         complete.cases(qmax_p_c)) %>%
+  ggplot(aes(x = taxon, y = qmax_p_c)) %>% 
+  + geom_point(position = position_jitter(width = 0.05)) %>% 
+  + coord_flip() %>% 
+  + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
+  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Variable definition"],
+                              " [",
+                              Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Units"],
+                              "]"))
+p
+```
+
+![](readme_files/figure-html/max_P_C-1.png) 
+
 
 ## Consistency
 
@@ -84,26 +126,26 @@ kable(sets, format = "markdown")
 
 
 
-|Item                            |Title                                                                                                      |
-|:-------------------------------|:----------------------------------------------------------------------------------------------------------|
-|Chen_thermal_traits             |Chen (2015) Thermal Traits.                                                                                |
-|Chen_thermal_traits_meta        |Chen (2015) Thermal Traits metadata                                                                        |
-|Chen_thermal_traits_references  |Chen (2015) Thermal Traits references.                                                                     |
-|Edwards_cell_volumes            |Cell volumes of phytoplankton.                                                                             |
-|Edwards_cell_volumes_meta       |                                                                                                           |
-|Edwards_citations               |Citation information for nutrient utilization traits.                                                      |
-|Edwards_nutrient_traits         |Nutrient utilization traits of phytoplankton.                                                              |
-|Edwards_nutrient_traits_meta    |                                                                                                           |
-|Kremer_raw                      |Phytoplankton cell and natural unit biovolumes. Raw biovolume data - pre quality control.                  |
-|Kremer_raw_meta                 |                                                                                                           |
-|Kremer_taxa                     |Phytoplankton cell and natural unit biovolumes. Taxonomic look-up table based on ITIS classifications      |
-|Kremer_taxa_meta                |                                                                                                           |
-|Kremer_volumes_genus            |Phytoplankton cell and natural unit biovolumes. Genus-level biovolume data.                                |
-|Kremer_volumes_genus_agg        |Phytoplankton cell and natural unit biovolumes. Genus-level aggregated biovolume data and full taxonomy.   |
-|Kremer_volumes_genus_agg_meta   |                                                                                                           |
-|Kremer_volumes_genus_meta       |                                                                                                           |
-|Kremer_volumes_species          |Phytoplankton cell and natural unit biovolumes. Species-level biovolume data.                              |
-|Kremer_volumes_species_agg      |Phytoplankton cell and natural unit biovolumes. Species-level aggregated biovolume data and full taxonomy. |
-|Kremer_volumes_species_agg_meta |                                                                                                           |
-|Kremer_volumes_species_meta     |                                                                                                           |
+|Item                           |Title                                                                                                      |
+|:------------------------------|:----------------------------------------------------------------------------------------------------------|
+|Chen_thermal_traits            |Chen (2015) Thermal Traits.                                                                                |
+|Chen_thermal_traits_key        |Chen (2015) Thermal Traits key                                                                             |
+|Chen_thermal_traits_references |Chen (2015) Thermal Traits references.                                                                     |
+|Edwards_cell_volumes           |Cell volumes of phytoplankton.                                                                             |
+|Edwards_cell_volumes_key       |                                                                                                           |
+|Edwards_citations              |Citation information for nutrient utilization traits.                                                      |
+|Edwards_nutrient_traits        |Nutrient utilization traits of phytoplankton.                                                              |
+|Edwards_nutrient_traits_key    |                                                                                                           |
+|Kremer_raw                     |Phytoplankton cell and natural unit biovolumes. Raw biovolume data - pre quality control.                  |
+|Kremer_raw_key                 |                                                                                                           |
+|Kremer_taxa                    |Phytoplankton cell and natural unit biovolumes. Taxonomic look-up table based on ITIS classifications      |
+|Kremer_taxa_key                |                                                                                                           |
+|Kremer_volumes_genus           |Phytoplankton cell and natural unit biovolumes. Genus-level biovolume data.                                |
+|Kremer_volumes_genus_agg       |Phytoplankton cell and natural unit biovolumes. Genus-level aggregated biovolume data and full taxonomy.   |
+|Kremer_volumes_genus_agg_key   |                                                                                                           |
+|Kremer_volumes_genus_key       |                                                                                                           |
+|Kremer_volumes_species         |Phytoplankton cell and natural unit biovolumes. Species-level biovolume data.                              |
+|Kremer_volumes_species_agg     |Phytoplankton cell and natural unit biovolumes. Species-level aggregated biovolume data and full taxonomy. |
+|Kremer_volumes_species_agg_key |                                                                                                           |
+|Kremer_volumes_species_key     |                                                                                                           |
 

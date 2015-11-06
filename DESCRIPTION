@@ -6,3 +6,6 @@ Description: An R data package for phytoplankton traits. Trait values imported f
 Depends: R (>= 3.2.1)
 License: MIT + file
 LazyData: true
+Suggests: knitr,
+    rmarkdown
+VignetteBuilder: knitr
