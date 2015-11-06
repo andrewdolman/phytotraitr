@@ -1,4 +1,4 @@
-﻿Column name,Variable definition,Units,Storage type
+Column name,Variable definition,Units,Storage type
 species,Species name,text,string
 isolate,Isolate ID,text,string
 taxon,Taxon name,text,string
@@ -10,7 +10,7 @@ synonym,Former species name,text,string
 volume,Cell volume,µm^3^,floating point
 c_per_cell,Carbon per cell,µmol cell^-1^,floating point
 c_citation,C per cell citation,integer,integer
-mu_inf_amm,µ~inf~ for ammonium-limited growth,day^-1^,floating point
+mu_inf_amm,µ~inf~ for ammonium-limited growth,day^-1^,floating point
 mu_amm,µ~max~ for ammonium-limited growth,day^-1^,floating point
 k_amm_m,K~m~ for ammonium-limited growth,µmol L^-1^,floating point
 k_amm,K for ammonium uptake,µmol L^-1^,floating point
@@ -20,7 +20,7 @@ qmin_amm,Q~min~ for ammonium-limited growth,µmol N cell^-1^,floating point
 qmin_amm_c,Q~min~:C for ammonium-limited growth,µmol N µmol C^-1^,floating point
 qmax_amm,Q~max~ for ammonium-limited growth,µmol N cell^-1^,floating point
 qmax_amm_c,Q~max~:C for ammonium-limited growth,µmol N µmol C^-1^,floating point
-mu_inf_nit,µ~inf~ for nitrate-limited growth,day^-1^,floating point
+mu_inf_nit,µ~inf~ for nitrate-limited growth,day^-1^,floating point
 mu_nit,µ~max~ for nitrate-limited growth,day^-1^,floating point
 k_nit_m,K~m~ for nitrate-limited growth,µmol L^-1^,floating point
 k_nit,K for nitrate uptake,µmol L^-1^,floating point
@@ -30,7 +30,7 @@ qmin_nit,Q~min~ for nitrate-limited growth,µmol N cell^-1^,floating point
 qmin_nit_c,Q~min~:C for nitrate-limited growth,µmol N µmol C^-1^,floating point
 qmax_nit,Q~max~ for nitrate-limited growth,µmol N cell^-1^,floating point
 qmax_nit_c,Q~max~:C for nitrate-limited growth,µmol N µmol C^-1^,floating point
-mu_inf_p,µ~inf~ for phosphate-limited growth,day^-1^,floating point
+mu_inf_p,µ~inf~ for phosphate-limited growth,day^-1^,floating point
 mu_p,µmax for phosphate-limited growth,day^-1^,floating point
 k_p_m,Km for phosphate-limited growth,µmol L^-1^,floating point
 k_p,K for phosphate uptake,µmol L^-1^,floating point

@@ -27,12 +27,12 @@ library(stringr)
 library(dplyr)
 
 Chen_thermal_traits <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", na = "NA")
-Chen_thermal_traits_meta <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "Key", na = "NA") 
+Chen_thermal_traits_key <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "Key", na = "NA") 
 Chen_thermal_traits_references <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "References", na = "NA") 
 
-names(Chen_thermal_traits) <- Chen_thermal_traits_meta[["Variable"]]
+names(Chen_thermal_traits) <- Chen_thermal_traits_key[["Variable"]]
 
 use_data(Chen_thermal_traits,  overwrite = TRUE)
-use_data(Chen_thermal_traits_meta,  overwrite = TRUE)
+use_data(Chen_thermal_traits_key,  overwrite = TRUE)
 use_data(Chen_thermal_traits_references,  overwrite = TRUE)
 

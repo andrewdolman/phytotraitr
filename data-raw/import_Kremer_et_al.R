@@ -13,8 +13,8 @@ library(dplyr)
 Kremer_raw <- tbl_df(read.csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_raw_052814.csv", stringsAsFactors = FALSE))
 use_data(Kremer_raw, overwrite = TRUE)
 
-Kremer_raw_meta <- tbl_df(read.csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_raw_052814_meta.csv", stringsAsFactors = FALSE))
-use_data(Kremer_raw_meta, overwrite = TRUE)
+Kremer_raw_key <- tbl_df(read.csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_raw_052814_key.csv", stringsAsFactors = FALSE))
+use_data(Kremer_raw_key, overwrite = TRUE)
 
 
 
@@ -25,9 +25,9 @@ Kremer_volumes_species <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Pta
 use_data(Kremer_volumes_species, overwrite = TRUE)
 
 
-Kremer_volumes_species_meta <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_species_raw_030614_meta.csv"
+Kremer_volumes_species_key <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_species_raw_030614_key.csv"
                                         , na = "NA")
-use_data(Kremer_volumes_species_meta, overwrite = TRUE)
+use_data(Kremer_volumes_species_key, overwrite = TRUE)
 
 
 
@@ -36,28 +36,28 @@ Kremer_volumes_genus <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacn
                                  ,col_types = cols(cells.per.nu  = col_number()), na = "NA")
 use_data(Kremer_volumes_genus, overwrite = TRUE)
 
-Kremer_volumes_genus_meta <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_genus_raw_030614_meta.csv", na = "NA")
-use_data(Kremer_volumes_genus_meta, overwrite = TRUE)
+Kremer_volumes_genus_key <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_genus_raw_030614_key.csv", na = "NA")
+use_data(Kremer_volumes_genus_key, overwrite = TRUE)
 
 
 
 Kremer_taxa <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/taxa_table_030614.csv", na = "NA")
 use_data(Kremer_taxa, overwrite = TRUE)
 
-Kremer_taxa_meta <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/taxa_table_030614_meta.csv", na = "NA")
-use_data(Kremer_taxa_meta, overwrite = TRUE)
+Kremer_taxa_key <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/taxa_table_030614_key.csv", na = "NA")
+use_data(Kremer_taxa_key, overwrite = TRUE)
 
 
 
 Kremer_volumes_species_agg <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_species_ag_030614.csv", na = "NA")
 use_data(Kremer_volumes_species_agg, overwrite = TRUE)
 
-Kremer_volumes_species_agg_meta <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_species_ag_030614_meta.csv", na = "NA")
-use_data(Kremer_volumes_species_agg_meta, overwrite = TRUE)
+Kremer_volumes_species_agg_key <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_species_ag_030614_key.csv", na = "NA")
+use_data(Kremer_volumes_species_agg_key, overwrite = TRUE)
 
 
 Kremer_volumes_genus_agg <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_genus_ag_030614.csv", na = "NA")
 use_data(Kremer_volumes_genus_agg, overwrite = TRUE)
 
-Kremer_volumes_genus_agg_meta <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_genus_ag_030614_meta.csv", na = "NA")
-use_data(Kremer_volumes_genus_agg_meta, overwrite = TRUE)
+Kremer_volumes_genus_agg_key <- read_csv("data-raw/Kremer_Gillette_Rudstam_Brettum_Ptacnik_2014/bvd_genus_ag_030614_key.csv", na = "NA")
+use_data(Kremer_volumes_genus_agg_key, overwrite = TRUE)
