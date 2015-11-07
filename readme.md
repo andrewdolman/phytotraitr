@@ -66,46 +66,27 @@ kable(Edwards_nutrient_traits_key[1:6,], format = "markdown")
 |temperature |Culture temperature |°C                       |floating point |
 |irradiance  |Culture irradiance  |µmol photons m^-2^ s^-1^ |floating point |
 
-### Minimum P cell quotas for freshwater taxa
+### Minimum and maximum P cell quotas for freshwater taxa
 
 
 ```r
 p <- Edwards_nutrient_traits %>% 
-  filter(system == "freshwater",
-         complete.cases(qmin_p_c)) %>%
-  ggplot(aes(x = taxon, y = qmin_p_c)) %>% 
+  filter(system == "freshwater") %>%
+  select(taxon, qmin_p_c, qmax_p_c) %>% 
+  gather(Trait, Value, -taxon) %>% 
+  filter(complete.cases(Value)) %>% 
+  ggplot(aes(x = taxon, y = Value, colour = Trait)) %>% 
   + geom_point(position = position_jitter(width = 0.05)) %>% 
   + coord_flip() %>% 
   + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
-  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Variable definition"],
-                              " [",
+  + scale_y_continuous(paste0("[",
                               Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmin_p_c","Units"],
-                              "]"))
+                              "]"),
+                       trans = "log10")
 p
 ```
 
-![](readme_files/figure-html/min_P_C-1.png) 
-
-
-### Maximum P cell quotas for freshwater taxa
-
-
-```r
-p <- Edwards_nutrient_traits %>% 
-  filter(system == "freshwater",
-         complete.cases(qmax_p_c)) %>%
-  ggplot(aes(x = taxon, y = qmax_p_c)) %>% 
-  + geom_point(position = position_jitter(width = 0.05)) %>% 
-  + coord_flip() %>% 
-  + scale_x_discrete(with(Edwards_nutrient_traits_key, Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
-  + scale_y_continuous(paste0(Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Variable definition"],
-                              " [",
-                              Edwards_nutrient_traits_key[Edwards_nutrient_traits_key$`Column name`=="qmax_p_c","Units"],
-                              "]"))
-p
-```
-
-![](readme_files/figure-html/max_P_C-1.png) 
+![](readme_files/figure-html/min_max_P_C-1.png) 
 
 
 ## Consistency
