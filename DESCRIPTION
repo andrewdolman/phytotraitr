@@ -2,10 +2,18 @@ Package: phytotraitr
 Title: An R data package for phytoplankton traits
 Version: 0.0.0.9000
 Authors@R: person("Andrew", "Dolman", email = "andydolman@gmail.com", role = c("aut", "cre"))
-Description: An R data package for phytoplankton traits. Trait values imported from key literature.
-Depends: R (>= 3.2.1)
+Description: An R data package for phytoplankton traits. Trait values imported
+    from key literature.
+Depends:
+    R (>= 3.2.1)
 License: MIT + file
 LazyData: true
-Suggests: knitr,
-    rmarkdown
+Suggests:
+    knitr,
+    rmarkdown,
+    dplyr,
+    readxl,
+    readr,
+    tidyr
 VignetteBuilder: knitr
+RoxygenNote: 5.0.1

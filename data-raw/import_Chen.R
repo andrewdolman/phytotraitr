@@ -21,18 +21,13 @@
 
 # Andrew M. Dolman  2015.10.02
 
-library(devtools)
-library(readxl)
-library(stringr)
-library(dplyr)
-
-Chen_thermal_traits <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", na = "NA")
-Chen_thermal_traits_key <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "Key", na = "NA") 
-Chen_thermal_traits_references <- read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "References", na = "NA") 
+Chen_thermal_traits <- readxl::read_excel("data-raw/Chen_2015/fbv009supp.xlsx", na = "NA")
+Chen_thermal_traits_key <- readxl::read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "Key", na = "NA") 
+Chen_thermal_traits_references <- readxl::read_excel("data-raw/Chen_2015/fbv009supp.xlsx", sheet = "References", na = "NA") 
 
 names(Chen_thermal_traits) <- Chen_thermal_traits_key[["Variable"]]
 
-use_data(Chen_thermal_traits,  overwrite = TRUE)
-use_data(Chen_thermal_traits_key,  overwrite = TRUE)
-use_data(Chen_thermal_traits_references,  overwrite = TRUE)
+devtools::use_data(Chen_thermal_traits,  overwrite = TRUE)
+devtools::use_data(Chen_thermal_traits_key,  overwrite = TRUE)
+devtools::use_data(Chen_thermal_traits_references,  overwrite = TRUE)
 

@@ -33,7 +33,7 @@ devtools::install_github("andrewdolman/phytotraitr")
 
 ## Usage
 
-```{r, echo=FALSE, message=FALSE}
+```{r load_packages, echo=FALSE, message=FALSE}
 library(knitr)
 library(dplyr)
 library(tidyr)
@@ -63,8 +63,8 @@ p <- Edwards_nutrient_traits %>%
                           Edwards_nutrient_traits_key[`Column name`=="taxon","Variable definition"])) %>% 
   + scale_y_continuous(paste0("[",
                               with(Edwards_nutrient_traits_key,
-                                   Edwards_nutrient_traits_key[`Column name`=="qmin_p_c","Units"],
-                              "]")))
+                                   Edwards_nutrient_traits_key[`Column name`=="qmin_p_c","Units"]),
+                              "]"))
 p
 ```
 
